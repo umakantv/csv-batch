@@ -26,7 +26,7 @@ npm install csv-batch
 
 ### Batching
 
-```
+```javascript
 const csvBatch = require('csv-batch');
 
 csvBatch(fileStream, {
@@ -34,24 +34,24 @@ csvBatch(fileStream, {
   batchSize: 10000,
   batchExecution: batch => addToDatabase(batch)
 }).then(results => {
-  console.log(`Processed ${results.totalRecords});
+  console.log(`Processed ${results.totalRecords}`);
 });
 ```
 
 ### In-Memory Results
 
-```
+```javascript
 const csvBatch = require('csv-batch');
 
 csvBatch(fileStream).then(results => {
-  console.log(`Processed ${results.totalRecords});
-  console.log(`CSV as JSON ${JSON.stringify(results.data, null, 2)});
+  console.log(`Processed ${results.totalRecords}`);
+  console.log(`CSV as JSON ${JSON.stringify(results.data, null, 2)}`);
 });
 ```
 
 ### In-Memory but reduce results
 
-```
+```javascript
 const csvBatch = require('csv-batch');
 
 csvBatch(fileStream, {
@@ -64,8 +64,8 @@ csvBatch(fileStream, {
     return current;
   }
 }).then(results => {
-  console.log(`Processed ${results.totalRecords});
-  console.log(`Final reduced value ${JSON.stringify(results.data, null, 2)});
+  console.log(`Processed ${results.totalRecords}`);
+  console.log(`Final reduced value ${JSON.stringify(results.data, null, 2)}`);
 });
 ```
 
@@ -83,7 +83,7 @@ csvBatch(fileStream, {
 
   - **Example:**
 
-  ```
+  ```javascript
   {
     line: 2,
     raw: '1,2,3',
